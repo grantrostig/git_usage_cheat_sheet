@@ -1,7 +1,4 @@
 # git_usage_cheat_sheet
-
-see wiki
-
 >Bring an existing or new repo to github:
 // new
 git init
