@@ -1,5 +1,6 @@
 Bring an existing (or new repo) to github via linux shell prompt:
 # new repo
+# cd into root of source/project tree
 git init
 git add .
 git commit -m “first commit”
