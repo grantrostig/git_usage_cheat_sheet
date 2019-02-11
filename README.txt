@@ -6,7 +6,7 @@ git add .
 git commit -m “first commit”
 # existing – password will be prompted.
 git remote add origin https://<YOUR_GITHUB_USER_NAME>@github.com/github.com/grantrostig/NAME_OF_ALREADY_INTIALIZED_EMPTY_REPO.git
-git remove -v       # verify it if you want
+git remote -v       # verify it if you want
 git push -u origin master
 
 # *** Pull down / download / Bring to your system a repo
