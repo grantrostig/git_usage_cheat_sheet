@@ -7,7 +7,7 @@ git init
 git add .                       # adds everything, if that is what you want.  
 git commit -m “<my first commit>”
 
-# === if existing repo on github
+# === if existing already initialized but empty repo on github
 git remote add origin https://<YOUR_GITHUB_USER_NAME>@github.com/github.com/grantrostig/<NAME_OF_ALREADY_INTIALIZED_EMPTY_REPO>.git
 git remote -v                   # optional step: go ahead verify it, if you want
 git push -u origin master
@@ -17,7 +17,7 @@ git push -u origin master
 # ========== Good/complete info on software licenses
 https://choosealicense.com/appendix/
 
-# ========== Stash and Stash Pop (ie. un-stash)
+# ========== Stash some code and then later Stash Pop (ie. un-stash) it.
 git stash [save] [<msg>]    # saves away your current work from 'workspace' to the 'stash'
 git stash list
 git stash show [<stash>]    # where stash is probably an integer like '0'.
