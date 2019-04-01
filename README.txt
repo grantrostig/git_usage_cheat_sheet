@@ -25,8 +25,15 @@ git stash pop               # applies latest stashed changes and removes it from
 # git stash apply [<stash>] # same as above but doesn't remove the stashed changes from the stash
 
 # ========== Figure out what is happing!?!
+# summary of the 5 possible singular states a change (to a file) can be in:
+# stash, workspace, index, local repository, upstream (or origin?) repository
 git stash list
 git fetch -v
 git branch -lavv
 git status -vv 
 git show --pretty=fuller [<object>]  
+
+# ========== Rebase (the alternative to merge - an area of disagreement between many)
+# you are told to rebase to the current state of master by the technical lead, so you perform these steps:
+# get your local repo into a stable state.
+git rebase origin/master
