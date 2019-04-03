@@ -25,8 +25,12 @@ git stash pop               # applies latest stashed changes and removes it from
 # git stash apply [<stash>] # same as above but doesn't remove the stashed changes from the stash
 
 # ========== Figure out what is happing!?!
-# summary of the 5 possible singular states a change (to a file) can be in:
-# stash, workspace, index (AKA staging,cache), local repository, upstream (or origin?) repository
+# summary of the 5 unique states a change (to a file) can be in:
+# stash,
+# workspace (AKA working tree),
+# index     (AKA staging area, staged files, current directory cache),
+# local repository,
+# upstream (or origin?) repository
 git stash list
 git fetch -v
 git branch -lavv
