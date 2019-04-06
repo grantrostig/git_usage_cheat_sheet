@@ -30,14 +30,18 @@ git stash pop               # applies latest stashed changes and removes it from
 # upstream (or origin?) repository
 git stash list
 git fetch -v
-git branch -lavv
+git branch -lavv   #OR: -r will singly list the remotes
 git status -vv 
 git show --pretty=fuller [<object>]  
-git log
+git log [< >..< >] [<text>]
 git log -- <FILE_NAME> #
 git log -p         # also show changes.
 git diff           # diff between workspace and index.
 git diff --staged  # diff between index and local repo, what we are about to commit.
+git fsck           # verify the integrity of the files in the entire repo.
+git show
+git show-ref --heads
+git diff HEAD  # shows what "commit -a" would do  # use "git gui" instead.
 
 #========== Rebase (the alternative to merge - an area of disagreement between many)
 # you are told to rebase to the current state of master by the technical lead, so you perform these steps:
@@ -52,6 +56,7 @@ git config --global user.email "<YOUR FULL EMAIL ADDR>"
 
 #========== Dangerous Stuff
 git rm <FILE_NAME>          # kills file in the workspace (ie. the filesystem), ALSO stages removal from repo.  If file had been previously committed, it can be brought back from history.
+git rm --cached <FILE_NAME> # kills file in the workspace (ie. the filesystem), ALSO stages removal from repo.
 git checkout -- <FILE_NAME> # throws away any workspace (never-indexed/never-staged) changes to file PERMANENTLY.
 git checkout <CHANGE_ID-BEFORE_DELETE> -- <FILE_NAME> # restores a file into workspace from repo that was previously deleted and delete was commited, ALSO stages whole file to index.
 git reset HEAD <FILE_NAME>  # throws away any indexed/staged changes to file, but changes are still in workspace.
