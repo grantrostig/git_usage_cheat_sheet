@@ -1,4 +1,4 @@
-# note on notation: replace <WHAT_EVER> with a value to fits your situation.
+# notes on notation: replace <WHAT_EVER> with a value to fits your situation. [] enclosed stuff is optional.  \ means also type the next line on the original line
 
 #========== Bring/export/upload an existing (or new) git repository/repo to github.com website via linux shell prompt:
 #=== if new repo
@@ -8,9 +8,10 @@ git add .                       # "." adds everything, if that is what you want,
 git commit -m “<my first commit>”
 git commit -am “<my first commit>”  # add and commit at once.
 #=== if existing already initialized but empty repo on github
-git remote add origin https://<YOUR_GITHUB_USER_NAME>@github.com/github.com/grantrostig/<NAME_OF_ALREADY_INTIALIZED_EMPTY_REPO>.git
+git remote add origin \
+https://<YOUR_GITHUB_USERNAME>@github.com/<YOUR_GITHUB_USERNAME>/<NAME_OF_ALREADY_INTIALIZED_EMPTY_REPO>.git
 git remote -v                   # optional step: go ahead verify it, if you want
-git push -u origin master
+git push -u origin master       # --set-upstream # add upstream (tracking) reference
 
 #========== Pull down / download / Bring to your system a repo TODO....
 
@@ -70,4 +71,6 @@ http://www.ndpsoftware.com/git-cheatsheet.html
 https://www.youtube.com/watch?v=uR6G2v_WsRA  # David Mahler series of 3 videos.
 https://www.youtube.com/watch?v=FyAAIHHClqI
 https://www.youtube.com/watch?v=Gg4bLk8cGNo
+man git-push  # yes, git has man pages on linux!
+git help push
 
