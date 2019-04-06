@@ -4,9 +4,8 @@
 #=== if new repo
 # $cd into root of source/project tree
 git init
-git add .                       # "." adds everything, if that is what you want, else <FILE_NAME>
-git commit -m “<my first commit>”
-git commit -am “<my first commit>”  # add and commit at once.
+git add .                          # "." adds everything, if that is what you want, else <FILE_NAME>
+git commit -m “<my first commit>”  # OR:-am “<my first commit>”  # add all & commit.
 #=== if existing already initialized but empty repo on github
 git remote add origin \
 https://<YOUR_GITHUB_USERNAME>@github.com/<YOUR_GITHUB_USERNAME>/<NAME_OF_ALREADY_INTIALIZED_EMPTY_REPO>.git
@@ -15,13 +14,10 @@ git push -u origin master       # --set-upstream # add upstream (tracking) refer
 
 #========== Pull down / download / Bring to your system a repo TODO....
 
-#========== Good/complete info on software licenses
-https://choosealicense.com/appendix/
-
 #========== Stash some code and then later Stash Pop (ie. un-stash) it.
-git stash [save] [<msg>]    # saves away your current work from 'workspace' to the 'stash'
+git stash push [-m <msg>]    # saves away your current work from 'workspace' to the 'stash'
 git stash list
-git stash show [<stash>]    # where stash is probably an integer like '0'.
+git stash show [<stash>]    # where <stash> is probably an integer like '0'.
 git stash pop               # applies latest stashed changes and removes it from stash     
 # git stash apply [<stash>] # same as above but doesn't remove the stashed changes from the stash
 
@@ -73,4 +69,5 @@ https://www.youtube.com/watch?v=FyAAIHHClqI
 https://www.youtube.com/watch?v=Gg4bLk8cGNo
 man git-push  # yes, git has man pages on linux!
 git help push
-
+#========== Good/complete info on software licenses to attach to your new repo.
+https://choosealicense.com/appendix/
