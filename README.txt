@@ -12,7 +12,9 @@ https://<YOUR_GITHUB_USERNAME>@github.com/<YOUR_GITHUB_USERNAME>/<NAME_OF_ALREAD
 git remote -v                   # optional step: go ahead verify it, if you want
 git push -u origin master       # --set-upstream # add upstream (tracking) reference
 
-#========== Pull down / download / Bring to your system a repo TODO....
+#========== Clone / Pull down / download / Bring an "original repo" to your system
+git clone <REPO> #  append if there are submodules you want: --recursive
+git submodule update --init --recursive  # in case there were git submodules you didn't get with a normal clone
 
 #========== Stash some code and then later Stash Pop (ie. un-stash) it.
 git stash push [-m <msg>]    # saves away your current work from 'workspace' to the 'stash'
