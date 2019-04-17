@@ -48,6 +48,14 @@ git diff HEAD  # shows what "commit -a" would do  # use "git gui" instead.
 # first get your local repo into a stable state, meaning what?: fetch??, commit??, stash??
 git rebase origin/master
 
+https://help.github.com/en/articles/addressing-merge-conflicts
+
+#========== Pull changes for "your clone" you made of another "origianal repo"
+# https://help.github.com/en/articles/merging-an-upstream-repository-into-your-fork
+git checkout master
+git pull https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git master
+git push origin master  # push to your github repo if you are ready
+
 #========== Config
 git config --list
 # --global OR --local
