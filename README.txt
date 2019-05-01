@@ -6,9 +6,11 @@
 git init
 git add .                          # "." adds everything, if that is what you want, else <FILE_NAME>
 git commit -m “<my first commit>”  # OR:-am “<my first commit>”  # add all & commit.
-#=== if existing already initialized but empty repo on github
+#=== if existing already initialized but empty repo on github, using HTTPS:
 git remote add origin \
 https://<YOUR_GITHUB_USERNAME>@github.com/<YOUR_GITHUB_USERNAME>/<NAME_OF_ALREADY_INTIALIZED_EMPTY_REPO>.git
+#=== or using SSH:
+git remote add origin git@bitbucket.org:<YOUR_GITHUB_USERNAME>/<NAME_OF_ALREADY_INTIALIZED_EMPTY_REPO>.git
 git remote -v                   # optional step: go ahead verify it, if you want
 git push -u origin master       # --set-upstream # add upstream (tracking) reference
 
