@@ -1,4 +1,4 @@
-# notes on notation: replace <WHAT_EVER> with a value to fits your situation. [] enclosed stuff is optional.  \ means also type the next line on the original line
+# notes on notation: replace <WHAT_EVER> with a value to fits your situation. [] enclosed stuff is optional.  \ means also type the next line on the original line, meaning we have a long line that has wrapped to the next line in this document.
 
 #========== Bring/export/upload an existing (or new) git repository/repo to github.com website via linux shell prompt:
 #=== if new repo
@@ -6,17 +6,26 @@
 git init
 git add .                          # "." adds everything, if that is what you want, else <FILE_NAME>
 git commit -m “<my first commit>”  # OR:-am “<my first commit>”  # add all & commit.
+
 #=== if existing already initialized but empty repo on github, using HTTPS:
 git remote add origin \
 https://<YOUR_GITHUB_USERNAME>@github.com/<YOUR_GITHUB_USERNAME>/<NAME_OF_ALREADY_INTIALIZED_EMPTY_REPO>.git
-#=== or using SSH:
+#=== else if using SSH:
 git remote add origin git@bitbucket.org:<YOUR_GITHUB_USERNAME>/<NAME_OF_ALREADY_INTIALIZED_EMPTY_REPO>.git
+                      git@github.org
 git remote -v                   # optional step: go ahead verify it, if you want
 git push -u origin master       # --set-upstream # add upstream (tracking) reference
 
 #========== Clone / Pull down / download / Bring an "original repo" to your system
-git clone <REPO> #  append if there are submodules you want: --recursive
-git submodule update --init --recursive  # in case there were git submodules you didn't get with a normal clone
+git clone <REPO> # <REPO> is either HTTPS or SSH *.git URLS as above, 
+# also: if there are submodules you want, append this to above: --recursive
+git submodule update --init --recursive  # in case there were git submodules you didn't get using a normal clone (ie. you forgot to use --recursive)
+
+#========== When SSH give an error - 
+# Note your key files in ~/.ssh must not be open to reading by others or you will 
+# get a generic "invalid key" error, because ssh will silently ignore them.
+ssh -vT git@github.com   # gives you a hint
+# try this https://help.github.com/en/articles/error-permission-denied-publickey
 
 #========== Stash some code and then later Stash Pop (ie. un-stash) it.
 git stash push [-m <msg>]    # saves away your current work from 'workspace' to the 'stash'
