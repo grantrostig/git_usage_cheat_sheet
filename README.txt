@@ -21,9 +21,13 @@ git clone <REPO> # <REPO> is either HTTPS or SSH *.git URLS as above,
 # also: if there are submodules you want, append this to above: --recursive
 git submodule update --init --recursive  # in case there were git submodules you didn't get using a normal clone (ie. you forgot to use --recursive)
 
-#========== When SSH give an error - 
+#========== When SSH gives an error - 
 # Note your key files in ~/.ssh must not be open to reading by others or you will 
 # get a generic "invalid key" error, because ssh will silently ignore them.
+# fedora33 error on clone: sign_and_send_pubkey: signing failed for RSA "/home/grostig/.ssh/id_rsa" from agent: agent refused operation \n git@github.com: Permission denied (publickey).
+chmod 744 ~/.ssh
+chmod 600 ~/.ssh/id_rsa
+chmod 644 ~/.ssh/id_rsa.pub
 ssh -vT git@github.com   # gives you a hint
 # try this https://help.github.com/en/articles/error-permission-denied-publickey
 
