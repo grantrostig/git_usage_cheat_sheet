@@ -1,15 +1,18 @@
+https://www.rootusers.com/25-useful-dnf-command-examples-for-package-management-in-linux/
+
 dnf -v repolist [--enabled|--disabled|--all]
-
+dnf group list
 dnf list                                                         // @rpmfusion-nonfree-nvidia-driver
-
+dnf group info "Development Tools"
 dnf config-manager --add-repo /etc/yum.repos.d/grafana_repo.repo
 dnf config-manager --set-enabled grafana
 
 dnf                --enablerepo=grafana_repo --disablerepo=fedora, fedora_extra install grafana_pkg
-
+dnf search php_pkg
 dnf repository-packages fedora list ~<available | installed>  // 54000
 
-dnf -l repoquery libstdc++-devel  // list all files in package
+dnf -l -q repoquery libstdc++-devel  // list all files in package
+dnf -q    provides /bin/ls
 
 dnf [options] repoquery [<select-options>] [<query-options>] [<package-file-spec>]
        Display NEVRAs of all available packages matching light*:
@@ -35,4 +38,14 @@ dnf [options] repoquery [<select-options>] [<query-options>] [<package-file-spec
        Display source packages that require a <provide> for a build:
           dnf repoquery --disablerepo="*" --enablerepo="*-source" --arch=src --whatrequires <provide>
 
-
+https://askbot.fedoraproject.org/en/question/106347/how-to-install-package-sources-with-dnf/
+https://fedoraproject.org/wiki/Using_Mock_to_test_package_builds#How_do_I_set_up_Mock.3F
+dnf install dnf-plugins-core  // gives you the download plugin
+sudo dnf download --source gcc.src
+sudo dnf install mock rpm-build python3-dnf-plugins-core
+sudo usermod -a -G mock grostig
+rpm -ivh boost-1.60.0-10.fc25.src.rpm
+cd ~/rpmbuilds/SPEC
+rpmbuild -bp -v gcc.spec 
+// we have source, patched.  Continue to actually build files.
+sudo dnf builddep  gcc.spec  // added 800 MB of files!
