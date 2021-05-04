@@ -1,0 +1,38 @@
+dnf -v repolist [--enabled|--disabled|--all]
+
+dnf list                                                         // @rpmfusion-nonfree-nvidia-driver
+
+dnf config-manager --add-repo /etc/yum.repos.d/grafana_repo.repo
+dnf config-manager --set-enabled grafana
+
+dnf                --enablerepo=grafana_repo --disablerepo=fedora, fedora_extra install grafana_pkg
+
+dnf repository-packages fedora list ~<available | installed>  // 54000
+
+dnf -l repoquery libstdc++-devel  // list all files in package
+
+dnf [options] repoquery [<select-options>] [<query-options>] [<package-file-spec>]
+       Display NEVRAs of all available packages matching light*:
+          dnf repoquery 'light*'
+       Display NEVRAs of all available packages matching name light* and architecture noarch (accepts only arguments in the "<name>.<arch>" format):
+          dnf repoquery-na 'light*.noarch'
+       Display requires of all lighttpd packages:
+          dnf repoquery --requires lighttpd
+       Display packages providing the requires of python packages:
+          dnf repoquery --requires python --resolve
+       Display source rpm of ligttpd package:
+          dnf repoquery --source lighttpd
+       Display package name that owns the given file:
+          dnf repoquery --file /etc/lighttpd/lighttpd.conf
+       Display name, architecture and the containing repository of all lighttpd packages:
+          dnf repoquery --queryformat '%{name}.%{arch} : %{reponame}' lighttpd
+       Display all available packages providing "webserver":
+          dnf repoquery --whatprovides webserver
+       Display all available packages providing "webserver" but only for "i686" architecture:
+          dnf repoquery --whatprovides webserver --arch i686
+       Display duplicate packages:
+          dnf repoquery --duplicates
+       Display source packages that require a <provide> for a build:
+          dnf repoquery --disablerepo="*" --enablerepo="*-source" --arch=src --whatrequires <provide>
+
+
