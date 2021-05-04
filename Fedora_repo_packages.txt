@@ -1,4 +1,5 @@
 https://www.rootusers.com/25-useful-dnf-command-examples-for-package-management-in-linux/
+http://mirrors.syringanetworks.net/fedora/linux/releases/33/Everything/source/tree/
 
 dnf -v repolist [--enabled|--disabled|--all]
 dnf group list
