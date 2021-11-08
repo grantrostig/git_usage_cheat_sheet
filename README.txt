@@ -42,25 +42,25 @@ git stash pop               # applies latest stashed changes and removes it from
 
 #========== Figure out what is happing!?!
 # summary of the 5 unique states a change (to a file) can be in:
-# stash,
-# workspace (CONFUSION FACTOR: working tree/directory refers to both workspace and index)),
-# index     (AKA staging area, staged files, current directory cache) ("check-in changes to index" AKA "stage changes"),
-# local repository,
-# upstream (or origin?) repository
+# - stash,
+# - workspace (CONFUSION FACTOR: working tree/directory refers to both workspace and index)),
+# - index     (AKA staging area, staged files, current directory cache) ("check-in changes to index" AKA "stage changes"),
+# - local repository,
+# - upstream (or origin?) repository
 git stash list
 git fetch -v
 git branch -lavv   #OR: -r will singly list the remotes
-git status -vv 
-git show --pretty=fuller [<object>]  
-git log [< >..< >] [<text>]
+git status -v -v -uall -find-renames -renames 
+git show --pretty=fuller --notes [<object>...]  
+git log [< >..< >] [<text>] --pretty=fuller
 git log -- <FILE_NAME> #
-git log -p         # also show changes.
+git log -p         # also show changes.  -p is not documented anymore??
 git diff           # diff between workspace and index.
 git diff --staged  # diff between index and local repo, what we are about to commit.
-git fsck           # verify the integrity of the files in the entire repo.
-git show
-git show-ref --heads
-git diff HEAD  # shows what "commit -a" would do  # use "git gui" instead.
+git fsck --unreachable --cache --root --tags --strict          # verify the integrity of the files in the entire repo.
+git show-ref --head --verify
+git diff --cached  # shows what "commit" would do # use "git gui" instead.
+git diff HEAD      # shows what "commit -a" would do
 
 #========== Rebase (the alternative to merge - an area of disagreement between many)
 # you are told to rebase to the current state of master by the technical lead, so you perform these steps:
@@ -99,7 +99,7 @@ http://www.ndpsoftware.com/git-cheatsheet.html
 https://www.youtube.com/watch?v=uR6G2v_WsRA  # David Mahler series of 3 videos.
 https://www.youtube.com/watch?v=FyAAIHHClqI
 https://www.youtube.com/watch?v=Gg4bLk8cGNo
-man git-push  # yes, git has man pages on linux!
-git help push
+man git-push  # tells about "git push ..."
+git help push # same as above line
 #========== Good/complete info on software licenses to attach to your new repo.
 https://choosealicense.com/appendix/
