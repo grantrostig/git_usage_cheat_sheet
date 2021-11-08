@@ -50,7 +50,7 @@ git stash pop               # applies latest stashed changes and removes it from
 git stash list
 git fetch -v
 git branch -lavv   #OR: -r will singly list the remotes
-git status -v -v -uall -find-renames -renames 
+git status -v -v -uall --find-renames --renames 
 git show --pretty=fuller --notes [<object>...]  
 git log [< >..< >] [<text>] --pretty=fuller
 git log -- <FILE_NAME> #
@@ -76,10 +76,10 @@ git pull https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git master
 git push origin master  # push to your github repo if you are ready
 
 #========== Config
-git config --list
-# --global OR --local
+git config -l
 git config --global user.name  "<YOUR NAME>"
 git config --global user.email "<YOUR FULL EMAIL ADDR>"
+# --global OR --local OR --system OR --worktree OR -f OR --blob <block-id>
 
 #========== Dangerous Stuff
 git rm <FILE_NAME>          # kills file in the workspace (ie. the filesystem), ALSO stages removal from repo.  If file had been previously committed, it can be brought back from history.
