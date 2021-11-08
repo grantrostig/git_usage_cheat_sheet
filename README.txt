@@ -1,3 +1,4 @@
+git command usage examples and cheat sheet
 # notes on notation: replace <WHAT_EVER> with a value to fits your situation. [] enclosed stuff is optional.  \ means also type the next line on the original line, meaning we have a long line that has wrapped to the next line in this document.
 
 #========== Bring/export/upload an existing (or new) git repository/repo to github.com website via linux shell prompt:
