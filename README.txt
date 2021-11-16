@@ -89,13 +89,16 @@ git checkout -- <FILE_NAME> # throws away any workspace (never-indexed/never-sta
 git checkout <CHANGE_ID-BEFORE_DELETE> -- <FILE_NAME> # restores a file into workspace from repo that was previously deleted and delete was commited, ALSO stages whole file to index.
 git reset HEAD <FILE_NAME>  # throws away any indexed/staged changes to file, but changes are still in workspace.
 
-#=============== QtCreator IDE faciliated commands =====
+#========== QtCreator IDE faciliated commands =====
 # amend commit
 git commit -F C:\Users\grostig\AppData\Local\Temp\QtCreator.ZpdSkp --amend
 # remove file, from the Qt project and index, but probably not from the file system. todo:??
 git rm --force git_usage_cheat_sheet.files
-
-#=============== High Quality Reference/Tutorial Resources for GIT =====
+#========== Linux git tools I use that work together as a unit. Not sure if latter two are automatically installed with first.
+git cola
+git DAG
+gitk
+#========== High Quality Reference/Tutorial Resources for GIT =====
 http://www.ndpsoftware.com/git-cheatsheet.html
 https://www.youtube.com/watch?v=uR6G2v_WsRA  # David Mahler series of 3 videos.
 https://www.youtube.com/watch?v=FyAAIHHClqI
