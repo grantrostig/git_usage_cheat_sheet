@@ -29,11 +29,13 @@ git submodule update --init --recursive  # in case there were git submodules you
 # get a generic "invalid key" error, because ssh will silently ignore them.
 # fedora33 error on clone: sign_and_send_pubkey: signing failed for RSA "/home/grostig/.ssh/id_rsa" from agent: 
 #   ... agent refused operation \n git@github.com: Permission denied (publickey).
-stat -c '%a %n' .ssh .ssh/*
+stat -c '%a %n' ~/.ssh ~/.ssh/*
 chmod 700 ~/.ssh
+chmod 600 ~/.ssh/id_ecdsa
+chmod 600 ~/.ssh/id_ed25519
 chmod 600 ~/.ssh/id_rsa
-chmod 644 ~/.ssh/id_rsa.pub
-ssh -vT git@github.com   # gives you a hint
+chmod 644 ~/.ssh/id_rsa.pub # (and others from above)
+ssh -vT git@github.com   # output gives you a hint, tells if authentication worked
 # try this https://help.github.com/en/articles/error-permission-denied-publickey
 
 #========== Stash some code and then later Stash Pop (ie. un-stash) it.
