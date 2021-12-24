@@ -1,6 +1,6 @@
 git command usage examples and cheat sheet
 # notes on notation: replace <WHAT_EVER> with a value to fits your situation. [] enclosed stuff is optional.  
-# ... \ means also type the next line on the original line, meaning we have a long line that has wrapped to the next line in this document.
+#   ... \ means also type the next line on the original line, meaning we have a long line that has wrapped to the next line in this document.
 
 #========== Bring/export/upload an existing (or new) git repository/repo to github.com website via linux shell prompt:
 #=== if new repo
@@ -28,7 +28,7 @@ git submodule update --init --recursive  # in case there were git submodules you
 # Note your key files in ~/.ssh must not be open to reading by others or you will 
 # get a generic "invalid key" error, because ssh will silently ignore them.
 # fedora33 error on clone: sign_and_send_pubkey: signing failed for RSA "/home/grostig/.ssh/id_rsa" from agent: 
-#       ... agent refused operation \n git@github.com: Permission denied (publickey).
+#   ... agent refused operation \n git@github.com: Permission denied (publickey).
 stat -c '%a %n' .ssh .ssh/*
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/id_rsa
@@ -89,7 +89,8 @@ git rm <FILE_NAME>          # kills file in the workspace (ie. the filesystem), 
 #   ... If file had been previously committed, it can be brought back from history.
 git rm --cached <FILE_NAME> # kills file in the workspace (ie. the filesystem), ALSO stages removal from repo.
 git checkout -- <FILE_NAME> # throws away any workspace (never-indexed/never-staged) changes to file PERMANENTLY.
-git checkout <CHANGE_ID-BEFORE_DELETE> -- <FILE_NAME> # restores a file into workspace from repo that was previously deleted and delete was commited, ALSO stages whole file to index.
+git checkout <CHANGE_ID-BEFORE_DELETE> -- <FILE_NAME> # restores a file into workspace from repo that was previously 
+#   ... deleted and delete was commited, ALSO stages whole file to index.
 git reset HEAD <FILE_NAME>  # throws away any indexed/staged changes to file, but changes are still in workspace.
 
 #========== QtCreator IDE faciliated commands =====
