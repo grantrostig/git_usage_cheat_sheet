@@ -16,8 +16,8 @@ https://<YOUR_GITHUB_USERNAME>@github.com/<YOUR_GITHUB_USERNAME>/<NAME_OF_ALREAD
 git remote add origin git@bitbucket.org:<YOUR_GITHUB_USERNAME>/<NAME_OF_ALREADY_INTIALIZED_EMPTY_REPO>.git
                OR ^^  git@github.com
 git remote -v                   # optional step: go ahead verify it, if you want
-git branch -M main
-git push -u origin main       # --set-upstream # add upstream (tracking) reference
+git branch -M master
+git push -u origin master       # --set-upstream # add upstream (tracking) reference
 
 #========== Clone / Pull down / download / Bring an "original repo" to your system
 git clone <REPO> # <REPO> is either HTTPS or SSH *.git URLS as above, 
