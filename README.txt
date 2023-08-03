@@ -55,8 +55,9 @@ git stash pop               # applies latest stashed changes and removes it from
 # - index     (AKA staging area, staged files, current directory cache) ("check-in changes to index" AKA "stage changes"),
 # - local repository,
 # - upstream (or origin?) repository
+more ./.git/config # gives $ remote "origin" url = git@github.com:grantrostig/file_maintenance_clipped.git $ fetch = +refs/heads/*:refs/remotes/origin/*
+git fetch -v  # gives: $ From github.com:grantrostig/file_maintenance_clipped $ =[up to date] master->origin/master
 git stash list
-git fetch -v
 git branch -lavv   #OR: -r will singly list the remotes
 git status -v -v -uall --find-renames --renames 
 git show --pretty=fuller --notes [<object>...]  
