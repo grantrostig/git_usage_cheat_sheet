@@ -59,7 +59,7 @@ more ./.git/config # gives $ remote "origin" url = git@github.com:grantrostig/fi
 git fetch -v  # gives: $ From github.com:grantrostig/file_maintenance_clipped $ =[up to date] master->origin/master
 git stash list
 git branch -lavv   #OR: -r will singly list the remotes
-git status -v -v -uall --find-renames --renames 
+git status -vv -uall --find-renames --renames 
 git show --pretty=fuller --notes [<object>...]  
 git log [< >..< >] [<text>] --pretty=fuller
 git log -- <FILE_NAME> #
@@ -115,5 +115,11 @@ https://www.youtube.com/watch?v=FyAAIHHClqI
 https://www.youtube.com/watch?v=Gg4bLk8cGNo
 man git-push  # tells about "git push ..."
 git help push # same as above line
+#========== Other stuff
 #========== Good/complete info on software licenses to attach to your new repo.
 https://choosealicense.com/appendix/
+#---------- finding files and or text file content
+tree -af | grep <FILENAME-PARTIAL>
+find . -iname <FILENAME>  # gives errors for directories where no permissions
+grep -rn <FILE-CONTENT>
+
