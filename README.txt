@@ -120,6 +120,8 @@ git help push # same as above line
 https://choosealicense.com/appendix/
 #---------- finding files and or text file content
 tree -af | grep <FILENAME-PARTIAL>
+# symlink -s relative -r interactive_clobber -i
+ln -svri Makefile ../lib_tty/Makefile
 find . -iname <FILENAME>  # gives errors for directories where no permissions
 grep -rn <FILE-CONTENT>
 
