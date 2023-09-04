@@ -123,5 +123,5 @@ tree -af | grep <FILENAME-PARTIAL>
 # symlink -s relative -r interactive_clobber -i
 ln -svri Makefile ../lib_tty/Makefile
 find . -iname <FILENAME>  # gives errors for directories where no permissions
-grep -rn <FILE-CONTENT>
+grep -Rnwe <FILE-CONTENT-SEARCH-STRING> # add l for only the file name
 
