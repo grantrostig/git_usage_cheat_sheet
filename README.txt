@@ -2,27 +2,26 @@ git command usage examples and cheat sheet
 # notes on notation: replace <WHAT_EVER> with a value to fits your situation. [] enclosed stuff is optional.  
 #   ... \ means also type the next line on the original line, meaning we have a long line that has wrapped to the next line in this document.
 
-#========== Bring/export/upload an existing (or new) git repository/repo which is on your local computer to the github.com website via linux shell prompt:
+#========= Bring/export/upload an existing (or new) git repository/repo which is on your local computer to the github.com website via linux shell prompt:
 cd into root of source/project tree
 #=== New git repo to be created within an empty or non-empty project directory on local computer
 git init
 git add .                          # "." adds everything, if that is what you want, else <FILE_NAME>
 git commit -m “<my first commit>”  # OR:-am “<my first commit>”  # add all & commit.
-
-#=== Requires existing already created, but empty repo, on github, 
-#=== if using HTTPS:
-git remote add origin \
-https://<YOUR_GITHUB_USERNAME>@github.com/<YOUR_GITHUB_USERNAME>/<NAME_OF_ALREADY_INTIALIZED_EMPTY_REPO>.git
-#=== else if using SSH:
-git remote add origin git@bitbucket.org:<YOUR_GITHUB_USERNAME>/<NAME_OF_ALREADY_INTIALIZED_EMPTY_REPO>.git
-               OR ^^  git@github.com
+#=== Connecting and pushing code to existing already created, but empty repo, on github, 
+#=== if using SSH:
+  git remote add origin git@bitbucket.org:<YOUR_GITHUB_USERNAME>/<NAME_OF_ALREADY_INTIALIZED_EMPTY_REPO>.git
+                 OR ^^  git@github.com
+#=== else if using HTTPS:
+  git remote add origin \
+      https://<YOUR_GITHUB_USERNAME>@github.com/<YOUR_GITHUB_USERNAME>/<NAME_OF_ALREADY_INTIALIZED_EMPTY_REPO>.git
 #=== end if               
 git remote -v                   # optional step: go ahead verify it, if you want
 git branch -M master            # github claims it wants "main" but that is just PC and wrong
 git push -u origin master       # --set-upstream # add upstream (tracking) reference
 #=== Done :)
 
-#========== Clone / Pull down / download / Bring an "original repo" to your system
+#========== Clone/Pull down/download/ Bring an "original repo" to your system
 git clone <REPO> # <REPO> is either HTTPS or SSH *.git URLS as above, 
 # also: if there are submodules you want, append this to above: --recursive
 git submodule update --init --recursive  # in case there were git submodules you didn't get using a normal clone (ie. you forgot to use --recursive)
