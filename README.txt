@@ -123,4 +123,8 @@ tree -af | grep <FILENAME-PARTIAL>
 ln -svri Makefile ../lib_tty/Makefile
 find . -iname <FILENAME>  # gives errors for directories where no permissions
 grep -Rnwe <FILE-CONTENT-SEARCH-STRING> # add l for only the file name
-
+#----------- Cmake compile
+cd elements
+mkdir build
+cd build
+cmake ../ -G "Unix Makefiles" -DELEMENTS_HOST_UI_LIBRARY=gtk
