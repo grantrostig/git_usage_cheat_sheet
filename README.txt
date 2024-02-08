@@ -114,17 +114,22 @@ https://www.youtube.com/watch?v=FyAAIHHClqI
 https://www.youtube.com/watch?v=Gg4bLk8cGNo
 man git-push  # tells about "git push ..."
 git help push # same as above line
-#========== Other stuff
+#==================== Other stuff
 #========== Good/complete info on software licenses to attach to your new repo.
 https://choosealicense.com/appendix/
-#---------- finding files and or text file content
-tree -af | grep <FILENAME-PARTIAL>
-# symlink -s relative -r interactive_clobber -i
-ln -svri Makefile ../lib_tty/Makefile
-find . -iname <FILENAME>  # gives errors for directories where no permissions
-grep -Rnwe <FILE-CONTENT-SEARCH-STRING> # add l for only the file name
-#----------- Cmake compile
-cd elements
-mkdir build
-cd build
-cmake ../ -G "Unix Makefiles" -DELEMENTS_HOST_UI_LIBRARY=gtk
+#========== finding files and or text file content
+$ symlink -s relative -r interactive_clobber -i
+$ ln -svri Makefile ../lib_tty/Makefile
+#========== finding files and or text file content
+$ tree -af | grep <FILENAME-PARTIAL>
+
+$ find . -iname <FILENAME>  # gives errors for directories where no permissions
+$ find . -type d -regex ".*/src/.*" -exec grep -r "io_context" {} \;
+
+$ grep -Rnwe <FILE-CONTENT-SEARCH-STRING> # add l for only the file name
+$ grep -rE "^.*asio.*async.*|io_context" --include "*.hpp" --include "*.cpp" .
+#========== Cmake compile
+$ cd elements
+$ mkdir build
+$ cd build
+$ cmake ../ -G "Unix Makefiles" -DELEMENTS_HOST_UI_LIBRARY=gtk
