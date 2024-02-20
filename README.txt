@@ -122,7 +122,7 @@ $ symlink -s relative -r interactive_clobber -i
 $ ln -svri Makefile ../lib_tty/Makefile
 #========== finding files and or text file content
 $ tree -af | grep <FILENAME-PARTIAL>
-
+$ rg -n -w '[A-Z]+_SUSPEND' # ripgrep (Unicode)
 $ find . -iname <FILENAME>  # gives errors for directories where no permissions
 $ find . -type d -regex ".*/src/.*" -exec grep -r "io_context" {} \;
 
