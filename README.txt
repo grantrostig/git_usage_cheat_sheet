@@ -117,7 +117,7 @@ git help push # same as above line
 #==================== Other stuff
 #========== Good/complete info on software licenses to attach to your new repo.
 https://choosealicense.com/appendix/
-#========== finding files and or text file content
+#========== Links-Symbolic: create
 $ symlink -s relative -r interactive_clobber -i
 $ ln -svri Makefile ../lib_tty/Makefile
 #========== finding files and or text file content
