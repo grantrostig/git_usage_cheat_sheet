@@ -1,4 +1,4 @@
-git command usage examples and cheat sheet
+GIT command usage examples and cheat sheet && other good stuff.
 # notes on notation: replace <WHAT_EVER> with a value to fits your situation. [] enclosed stuff is optional.  
 #   ... \ means also type the next line on the original line, meaning we have a long line that has wrapped to the next line in this document.
 
@@ -97,8 +97,7 @@ git checkout -- <FILE_NAME> # throws away any workspace (never-indexed/never-sta
 git checkout <CHANGE_ID-BEFORE_DELETE> -- <FILE_NAME> # restores a file into workspace from repo that was previously 
 #   ... deleted and delete was commited, ALSO stages whole file to index.
 git reset HEAD <FILE_NAME>  # throws away any indexed/staged changes to file, but changes are still in workspace.
-
-#========== QtCreator IDE faciliated commands =====
+#========== QtCreator IDE faciliated GIT commands =====
 # amend commit
 git commit -F C:\Users\grostig\AppData\Local\Temp\QtCreator.ZpdSkp --amend
 # remove file, from the Qt project and index, but probably not from the file system. todo:??
@@ -125,9 +124,12 @@ $ tree -af | grep <FILENAME-PARTIAL>
 $ rg -n -w '[A-Z]+_SUSPEND' # ripgrep (Unicode)
 $ find . -iname <FILENAME>  # gives errors for directories where no permissions
 $ find . -type d -regex ".*/src/.*" -exec grep -r "io_context" {} \;
-
 $ grep -Rnwe <FILE-CONTENT-SEARCH-STRING> # add l for only the file name
 $ grep -rE "^.*asio.*async.*|io_context" --include "*.hpp" --include "*.cpp" .
+$ rpm -ql <PACKAGE_NAME> # lists files within rpm package.
+#========== Network Diagnois
+$ sudo nethogs
+$ ping -D -O -W 120 -i 60 google.com | tee -a Ranch_Wireless_Intermittent_Problem.txt 
 #========== Cmake compile
 $ cd elements
 $ mkdir build
