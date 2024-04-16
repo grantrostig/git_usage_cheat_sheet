@@ -106,6 +106,9 @@ git rm --force git_usage_cheat_sheet.files
 git cola
 git DAG
 gitk
+#========== Start over without rm -r and clone again
+$ # get local to initial state, done by GitCola
+$ git push origin master --force # to push it back to messed up repo on github.com
 #========== High Quality Reference/Tutorial Resources for GIT =====
 http://www.ndpsoftware.com/git-cheatsheet.html
 https://www.youtube.com/watch?v=uR6G2v_WsRA  # David Mahler series of 3 videos.
