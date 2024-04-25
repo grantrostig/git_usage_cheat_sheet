@@ -69,7 +69,12 @@ git fsck --unreachable --cache --root --tags --strict          # verify the inte
 git show-ref --head --verify
 git diff --cached  # shows what "commit" would do # use "git gui" instead.
 git diff HEAD      # shows what "commit -a" would do
-
+gh repo list worthy-os --limit 1 --json name,diskUsage # yields:"diskUsage": 254978 {about 308MB, probably 1k blocks}
+Some potential background on size:
+  https://stackoverflow.com/questions/8646517/how-can-i-see-the-size-of-a-github-repository-before-cloning-it
+  https://gist.github.com/magnetikonline/dd5837d597722c9c2d5dfa16d8efe5b9
+  https://stackoverflow.com/questions/72170296/how-to-get-the-size-of-my-organization-repositories
+  OR Simply type: https://api.github.com/repos/orgname_ifany/repo_name on the browser
 #========== Rebase (the alternative to merge - an area of disagreement between many)
 # you are told to rebase to the current state of master by the technical lead, so you perform these steps:
 # first get your local repo into a stable state, meaning what?: fetch??, commit??, stash??
