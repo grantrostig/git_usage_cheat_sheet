@@ -69,7 +69,14 @@ git fsck --unreachable --cache --root --tags --strict          # verify the inte
 git show-ref --head --verify
 git diff --cached  # shows what "commit" would do # use "git gui" instead.
 git diff HEAD      # shows what "commit -a" would do
-gh repo list worthy-os --limit 1 --json name,diskUsage # yields:"diskUsage": 254978 {about 308MB, probably 1k blocks}
+gh repo list worthy-os --limit 1 --json name,diskUsage # yields:"diskUsage": 254978
+ { probably 1k blocks, about 308MB on my linux disk below is what clone said: 
+  remote: Enumerating objects: 274949, done.
+  remote: Counting objects: 100% (152/152), done.
+  remote: Compressing objects: 100% (132/132), done.
+  remote: Total 274949 (delta 87), reused 49 (delta 20), pack-reused 274797
+  Receiving objects: 100% (274949/274949), 249.05 MiB | 168.00 KiB/s, done. }
+
 Some potential background on size:
   https://stackoverflow.com/questions/8646517/how-can-i-see-the-size-of-a-github-repository-before-cloning-it
   https://gist.github.com/magnetikonline/dd5837d597722c9c2d5dfa16d8efe5b9
