@@ -142,6 +142,7 @@ $ find . -type d -regex ".*/src/.*" -exec grep -r "io_context" {} \;
 $ grep -Rnwe <FILE-CONTENT-SEARCH-STRING> # add l for only the file name
 $ grep -rE "^.*asio.*async.*|io_context" --include "*.hpp" --include "*.cpp" .
 $ rpm -ql <PACKAGE_NAME> # lists files within rpm package.
+$ sudo dnf whatprovides '*libbacktrace*'
 #========== Network Diagnois
 $ sudo nethogs
 $ ping -D -O -W 120 -i 60 google.com | tee -a Ranch_Wireless_Intermittent_Problem.txt 
