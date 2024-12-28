@@ -134,13 +134,15 @@ https://choosealicense.com/appendix/
 #========== Links-Symbolic: create
 $ symlink -s relative -r interactive_clobber -i
 $ ln -svri Makefile ../lib_tty/Makefile
-#========== finding files and or text file content
+#========== finding files by name
 $ tree -af | grep <FILENAME-PARTIAL>
-$ rg -n -w '[A-Z]+_SUSPEND' # ripgrep (Unicode)
+$ rg -n -w '[A-Z]+_SUSPEND' # ripgrep (Unicode) files with that regex name
 $ find . -iname <FILENAME>  # gives errors for directories where no permissions
+#========== finding files with text file content
 $ find . -type d -regex ".*/src/.*" -exec grep -r "io_context" {} \;
 $ grep -Rnwe <FILE-CONTENT-SEARCH-STRING> # add l for only the file name
 $ grep -rE "^.*asio.*async.*|io_context" --include "*.hpp" --include "*.cpp" .
+#========== finding files within rpm packages
 $ rpm -ql <PACKAGE_NAME> # lists files within rpm package.
 $ sudo dnf whatprovides '*libbacktrace*'
 #========== Network Diagnois
