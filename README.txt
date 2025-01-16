@@ -135,7 +135,7 @@ https://choosealicense.com/appendix/
 $ symlink -s relative -r interactive_clobber -i
 $ ln -svri Makefile ../lib_tty/Makefile
 #========== finding files by name
-$ tree -af | grep <FILENAME-PARTIAL>
+$ tree -af | grep <FILENAME-PARTIAL> # -a:all files including hidden -f:print full file name
 $ rg -n -w '[A-Z]+_SUSPEND' # ripgrep (Unicode) files with that regex name
 $ find . -iname <FILENAME>  # gives errors for directories where no permissions
 #========== finding files with text file content
