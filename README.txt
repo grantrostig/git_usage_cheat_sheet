@@ -140,7 +140,7 @@ $ rg -n -w '[A-Z]+_SUSPEND' # ripgrep (Unicode) files with that regex name
 $ find . -iname <FILENAME>  # gives errors for directories where no permissions
 #========== finding files with text file content
 $ find . -type d -regex ".*/src/.*" -exec grep -r "io_context" {} \;
-$ grep -Rnwe <FILE-CONTENT-SEARCH-STRING> # add l for only the file name
+$ grep -Rnwe <FILE-CONTENT-SEARCH-STRING> # add -l for only the file name, -e:regexp -w:regexp with whole words -n:prefix line number -R:recursively including symbolic links
 $ grep -rE "^.*asio.*async.*|io_context" --include "*.hpp" --include "*.cpp" .
 #========== finding files within rpm packages
 $ rpm -ql <PACKAGE_NAME> # lists files within rpm package.
