@@ -149,7 +149,19 @@ $ sudo dnf whatprovides '*libbacktrace*'
 $ sudo nethogs
 $ ping -D -O -W 120 -i 60 google.com | tee -a Ranch_Wireless_Intermittent_Problem.txt 
 #========== Cmake compile
-$ cd elements
+$ cd <ROOT_DIR_OF_SOURCE_PROJECT>
 $ mkdir build
 $ cd build
-$ cmake ../ -G "Unix Makefiles" -DELEMENTS_HOST_UI_LIBRARY=gtk
+#== then try something like these
+$ cmake ../ -G "<SOME_IDENTIFIER??>" -DELEMENTS_HOST_UI_LIBRARY=gtk
+#== OR for Visual Studio 64 bit, default is 32
+$ cmake ../ -G "Visual Studio 14 2015 Win64" -T host=x64 ..
+#== OR
+$ cmake ..
+$ cmake --build . --config Release
+#== OR
+$ cmake ..
+$ make <???> # ???? not sure this is true.
+#========== vcpkg load libraries
+$ TODO:
+
