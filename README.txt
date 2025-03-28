@@ -139,7 +139,8 @@ $ tree -af | grep <FILENAME-PARTIAL> # -a:all files including hidden -f:print fu
 $ rg -n -w '[A-Z]+_SUSPEND' # ripgrep (Unicode) files with that regex name
 $ find . -iname <FILENAME>  # gives errors for directories where no permissions
 #========== finding files with text file content
-$ find . -type d -regex ".*/src/.*" -exec grep -r "io_context" {} \;
+$ find . -type f -regex ".*\.cpp" -exec grep  "<SEARCH_TEXT>" {} /dev/null \;
+$ find . -type d -regex ".*/src/.*" -exec grep -r "io_context" {} \; # look in any *src* dir recursively for <SEARCH_TEXT> in the file??.
 $ grep -Rnwe <FILE-CONTENT-SEARCH-STRING> # add -l for only the file name, -e:regexp -w:regexp with whole words -n:prefix line number -R:recursively including symbolic links
 $ grep -rE "^.*asio.*async.*|io_context" --include "*.hpp" --include "*.cpp" .
 #========== finding files within rpm packages
