@@ -141,6 +141,10 @@ $ find . -iname <FILENAME>  # gives errors for directories where no permissions
 #========== finding files with text file content
 $ find . -type f -regex ".*\.cpp" -exec grep  "<SEARCH_TEXT>" {} /dev/null \;
 $ find . -type d -regex ".*/src/.*" -exec grep -r "io_context" {} \; # look in any *src* dir recursively for <SEARCH_TEXT> in the file??.
+$ find . -regex ".*.txt" -exec sh -c 'cat  >> $1 << EOF  
+QT           += qml widgets  gui xml xml
+CONFIG       += uitools
+EOF' _ {} \;
 $ grep -Rnwe <FILE-CONTENT-SEARCH-STRING> # add -l for only the file name, -e:regexp -w:regexp with whole words -n:prefix line number -R:recursively including symbolic links
 $ grep -rE "^.*asio.*async.*|io_context" --include "*.hpp" --include "*.cpp" .
 #========== finding files within rpm packages
