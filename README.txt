@@ -150,9 +150,10 @@ $ grep -rE "^.*asio.*async.*|io_context" --include "*.hpp" --include "*.cpp" .
 #========== finding files within rpm packages
 $ rpm -ql <PACKAGE_NAME> # lists files within rpm package.
 $ sudo dnf whatprovides '*libbacktrace*'
-** #========== finding duplicate files
+#========== finding duplicate files
 $ fdupes --cache --order name --sameline --recurse --size <DIRNAME> > fdupes.txt
 $ awk 'ORS=NR%2? " ":"\n"' fdupes.txt | sort -k1,1n > sorted_fdupes.txt
+# also consider $ rdfind
 #========== Network Diagnois
 $ sudo nethogs
 $ ping -D -O -W 120 -i 60 google.com | tee -a Ranch_Wireless_Intermittent_Problem.txt 
